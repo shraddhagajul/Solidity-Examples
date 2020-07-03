@@ -5,8 +5,11 @@ contract deleteFromArray{
 
         function removeByValue(uint value) public{
             uint i = find(value);
+            
             removeByPosition(i);
         }
+
+
 
         function find(uint value) private view returns (uint){ 
             uint i = 0;
@@ -22,6 +25,10 @@ contract deleteFromArray{
                 values[i] = values[i+1];
                 i++;
             }
+
+        // //delete only at posoition and make value = 0
+            //delete values[position]
+        // // value at position will be equal to 0
             //rather than making the last element 0, remove it from array count itself
             values[values.length-1] = 0;
         }
